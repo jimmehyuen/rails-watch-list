@@ -1,4 +1,13 @@
 <h1><%= @list.name %></h1>
-<ul>
-<li> Movie 1</li>
-</ul>
+<ol>
+
+<% @list.movies.each do |movie|  %>
+<li><%= movie.title %></li>
+<% end %>
+
+</ol>
+
+
+<%= link_to "Delete this list", list_path(@list), method: :delete, class: "btn btn-flat", data: { confirm: "Are you sure you want to delete this list?" } %>
+<br>
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
