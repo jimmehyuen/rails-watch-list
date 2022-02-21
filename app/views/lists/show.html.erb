@@ -6,7 +6,8 @@
 <% end %>
 
 </ol>
-
+<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<br>
 
 <%= link_to "Delete this list", list_path(@list), method: :delete, class: "btn btn-flat", data: { confirm: "Are you sure you want to delete this list?" } %>
 <br>
